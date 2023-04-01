@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is JAX-WS RI 2.2.9-b130926.1035 svn-revision#5f6196f2b90e9460065a4c2f4e30e065b245e51e. --><xs:schema xmlns:tns="http://WS/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://WS/">
+
+<xs:element name="AccountnotFoundException" type="tns:AccountnotFoundException"></xs:element>
+
+<xs:element name="ConvertDollartoDH" type="tns:ConvertDollartoDH"></xs:element>
+
+<xs:element name="ConvertDollartoDHResponse" type="tns:ConvertDollartoDHResponse"></xs:element>
+
+<xs:element name="compteList" type="tns:compteList"></xs:element>
+
+<xs:element name="compteListResponse" type="tns:compteListResponse"></xs:element>
+
+<xs:element name="getCompte" type="tns:getCompte"></xs:element>
+
+<xs:element name="getCompteResponse" type="tns:getCompteResponse"></xs:element>
+
+<xs:complexType name="getCompte">
+<xs:sequence>
+<xs:element name="code" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getCompteResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:compte" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="compte">
+<xs:sequence>
+<xs:element name="code" type="xs:int"></xs:element>
+<xs:element name="dateCreat" type="xs:dateTime" minOccurs="0"></xs:element>
+<xs:element name="nom" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="prenom" type="xs:string" minOccurs="0"></xs:element>
+<xs:element name="solde" type="xs:double"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="AccountnotFoundException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="compteList">
+<xs:sequence></xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="compteListResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:compte" minOccurs="0" maxOccurs="unbounded"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ConvertDollartoDH">
+<xs:sequence>
+<xs:element name="solde" type="xs:double"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ConvertDollartoDHResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:double"></xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
